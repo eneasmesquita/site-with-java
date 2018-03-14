@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <p:fieldset legend="Fale Conosco" style="color: #ffffff" styleClass="back">  
+
+        <h:outputLabel value="Estamos a disposição para sanar qualquer dúvida relacionada aos nossos serviços atuais e futuros, 
+                       estabelecimento de parcerias com assistências técnicas e profissionais 
+                       autônomos, informações sobre orçamentos, prazos, sugestões e opiniões."
+                       style="color: #ffffff"/>
+        <h:outputText/>
+        <h:outputText/>
+        <p:messages id="msgs"/>
+        <br/>
+        <p:message for=":tabView:form_fc:email"/>
+        <h:form id="form_fc">
+            <h:panelGrid columns="2" cellpadding="10">  
+                <h:column>
+                    <p:graphicImage library="images" name="email.png" height="256"/>  
+                </h:column>
+                <h:column>
+                    <h:panelGrid columns="2">
+                        <h:outputLabel value="Nome: "/>
+                        <p:inputText id="nome" style="width: 310px" required="true" value="#{faleConoscoBean.nome}"
+                                     requiredMessage="*O Nome deve ser especificado!"/>
+                        <h:outputLabel value="Email: "/>
+                        <p:inputText id="email" style="width: 310px" required="true" value="#{faleConoscoBean.email}"
+                                     validatorMessage="*Formato de email inválido!"
+                                     requiredMessage="*O Email deve ser especificado!">
+                            <f:validateRegex
+                                pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+                        </p:inputText>
+                        <h:outputLabel value="Contato: "/>
+                        <p:inputMask id="contato" mask="(99)9999-9999" style="width: 310px" value="#{faleConoscoBean.contato}" required="true" 
+                                     requiredMessage="*O Contato deve ser especificado!"/>
+                        <h:outputLabel value="Mensagem: "/>
+                        <p:inputTextarea id="area_msg" rows="6" value="#{faleConoscoBean.mensagem}" required="true" cols="55" 
+                                         requiredMessage="*A Mensagem deve ser especificada!"/>
+                        <h:outputLabel/>
+                        <p:captcha id="captcha" theme="white" language="pt" required="true" 
+                                   validatorMessage="*As palavras de entrada não são válidas! Gere um novo desafio."
+                                   requiredMessage="*É necessário realizar a validação de autoria de preenchimento do formulário!"/>
+                    </h:panelGrid>
+                    <center>
+                        <p:commandButton id="cmd_btn" value="Enviar" actionListener="#{faleConoscoBean.enviarEmail}"
+                                         style="font-family:Revalia, sans-serif"
+                                         update=":tabView:msgs :tabView:form_fc:nome :tabView:form_fc:email :tabView:form_fc:contato 
+                                         :tabView:form_fc:area_msg :tabView:form_fc:captcha"/>
+                    </center>
+                </h:column>
+            </h:panelGrid>
+        </h:form>
+        <p:blockUI block=":tabView" trigger=":tabView:form_fc:cmd_btn">  
+            Enviando...<br />  
+            <p:graphicImage library="images" name="carregando.gif"/> 
+        </p:blockUI>
+        <p:watermark for=":tabView:form_fc:area_msg" value="Deixe aqui sua dúvida, requisição, opinião ou sugestão."/>
+        <p:watermark for=":tabView:form_fc:nome" value="Nome Completo"/>
+    </p:fieldset>
+
+</html>
+

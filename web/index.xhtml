@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>k2k Technology</title>
+        <link href="#{facesContext.externalContext.request.contextPath}/resources/css/estilo.css" rel="stylesheet" type="text/css" />
+        <h:outputScript library="js" name="jquery-1.7.2.min.js" target="head"/>
+        <h:outputScript library="js" name="javascript.js" target="head"/>
+        <link href='http://fonts.googleapis.com/css?family=Revalia|Black+Ops+One' rel='stylesheet' type='text/css'/>
+        <script src="http://maps.google.com/maps/api/js?sensor=true" type="text/javascript"/>
+        <link rel="shortcut icon" href="#{facesContext.externalContext.request.contextPath}/resources/images/logo_icon.ico" type="image/x-icon" />
+    </h:head>
+
+    <h:body style="font-size: 11px; text-align: justify">
+
+        <p:panel styleClass="back">
+            <h:panelGrid columns="3">
+                <h:column>
+                    <h:graphicImage  library="images" name="logo-300x300.png"/>
+                </h:column>
+                <h:column>
+
+                    <p:outputLabel value="Soluções Inteligentes" style="color: #ffffff; font-size: 25px; font-family: 'Black Ops One', cursive"/><br/>
+                    <p:outputLabel value="Especializada em Notebooks e Desktops" style="color: #ffffff; font-size: 25px; ; font-family: 'Black Ops One', cursive"/>
+
+                </h:column>
+                <h:column>
+                    <p:graphicImage name="computers_array.png" library="images" style="padding-left: 20px"/>
+                </h:column>
+            </h:panelGrid>
+        </p:panel>
+
+        <br/>
+
+        <p:tabView id="tabView" widgetVar="tabView_wgt" style="background: top; font-family: 'Revalia', sans-serif" 
+                   effect="slide" styleClass="muda_servico">  
+
+            <p:tab id="tab1" title="Home">
+
+                <p:fieldset legend="Sobre Nós" style="color: #ffffff" styleClass="back">  
+                    <h:panelGrid columns="2" cellpadding="10">  
+
+                        <p:galleria value="#{viewBean.images}" var="image" panelHeight="276" panelWidth="470" showFilmstrip="false">  
+                            <p:graphicImage value="/resources/images/fotos/#{image}" width="470" height="276"/>  
+                        </p:galleria>
+
+                        <h:outputText style="font-size: 16px"
+                                      value="Empresa especializada no segmento de reparo e recuperação de notebooks e desktops. 
+                                      Ênfase em reparo eletrônico da placa mãe e troca do chipset (BGA). 
+                                      Utilizamos técnicas avançadas e equipamentos de alta tecnologia com o objetivo de satisfazer o cliente com soluções 
+                                      rápidas e eficientes." />
+                    </h:panelGrid>
+
+                </p:fieldset>  
+                
+                <br/>
+
+                <br/>
+                <h:outputLabel value="Nosso Diferencial" style="color: #333333; font-weight: bold"/>
+                <br/>
+                <br/>
+
+                <h:panelGrid columns="3">
+
+                    <p:fieldset legend="Precisão" style="color: #ffffff" styleClass="back">
+                        <h:outputText  
+                            value="Utilizamos técnicas inovadoras e equipamentos de alta tecnologia que nos 
+                            permite um reparo preciso e eficaz, abrangendo todos os defeitos e sinistros em equipamentos portáteis." />
+                    </p:fieldset>
+
+                    <p:fieldset legend="Diversidade" style="color: #ffffff" styleClass="back">
+                        <h:outputText  
+                            value="Aqui você realmente encontra uma solução para o defeito de seu equipamento, 
+                            seja ele um notebook ou desktop." />
+                    </p:fieldset>
+
+                    <p:fieldset legend="Qualidade" style="color: #ffffff" styleClass="back">
+                        <h:outputText  
+                            value="Oferecemos garantia total de nossos serviços. Reparos consistentes e 
+                            feedback satisfatório aos nossos clientes." />
+                    </p:fieldset>
+
+                </h:panelGrid>
+
+                <br/>
+                <br/>
+
+                <h:outputLabel value="Marcas de notebooks com as quais Trabalhamos" style="color: #333333; font-weight: bold"/>
+
+                <br/>
+                <br/>
+                <br/>
+
+                <div>
+                    <h:graphicImage library="images/galleria" name="Apple.png" height="92" width="92" style="padding: 5px"/>
+                    <h:graphicImage library="images/galleria" name="Samsung.png" height="92" width="92" style="padding: 5px"/>
+                    <h:graphicImage library="images/galleria" name="Vaio.png" height="92" width="92" style="padding: 5px"/>
+                    <h:graphicImage library="images/galleria" name="Sti.png" height="92" width="92" style="padding: 5px"/>
+                    <h:graphicImage library="images/galleria" name="Positivo.png" height="92" width="92" style="padding: 5px"/>
+                    <h:graphicImage library="images/galleria" name="Philco.png" height="92" width="92" style="padding: 5px"/>
+                    <h:graphicImage library="images/galleria" name="Pcchips.png" height="92" width="92" style="padding: 5px"/>
+                    <h:graphicImage library="images/galleria" name="Nec.png" height="92" width="92" style="padding: 5px"/>
+                    <h:graphicImage library="images/galleria" name="Microboard.png" height="92" width="92" style="padding: 5px"/>
+                    <h:graphicImage library="images/galleria" name="LG.png" height="92" width="92" style="padding: 5px"/>
+                    <h:graphicImage library="images/galleria" name="Lenovo.png" height="92" width="92" style="padding: 5px"/>
+                    <h:graphicImage library="images/galleria" name="Itautec.png" height="92" width="92" style="padding: 5px"/>
+                    <h:graphicImage library="images/galleria" name="intelbras.png" height="92" width="92" style="padding: 5px"/>
+                    <h:graphicImage library="images/galleria" name="IBM.png" height="92" width="92" style="padding: 5px"/>
+                    <h:graphicImage library="images/galleria" name="HP.png" height="92" width="92" style="padding: 5px"/>
+                    <h:graphicImage library="images/galleria" name="Gateway.png" height="92" width="92" style="padding: 5px"/>
+                    <h:graphicImage library="images/galleria" name="Emachines.png" height="92" width="92" style="padding: 5px"/>
+                    <h:graphicImage library="images/galleria" name="Ecs.png" height="92" width="92" style="padding: 5px"/>
+                    <h:graphicImage library="images/galleria" name="Compaq.png" height="92" width="92" style="padding: 5px"/>
+                    <h:graphicImage library="images/galleria" name="Cce.png" height="92" width="92" style="padding: 5px"/>
+                    <h:graphicImage library="images/galleria" name="Asus.png" height="92" width="92" style="padding: 5px"/>
+                    <h:graphicImage library="images/galleria" name="Amazon.png" height="92" width="92" style="padding: 5px"/>
+                    <h:graphicImage library="images/galleria" name="Acer.png" height="92" width="92" style="padding: 5px"/>
+                </div>
+
+            </p:tab>  
+
+            <p:tab id="tab2" title="Serviços">  
+                <ui:include id="inc_servicos" src="servicos.xhtml"/> 
+            </p:tab>  
+
+            <p:tab id="tab3" title="Localização">  
+
+                <ui:include id="inc_localizacao" src="localizacao.xhtml"/> 
+
+            </p:tab>  
+
+            <p:tab id="tab4" title="FAQ">  
+                <ui:include id="inc_faq" src="faq.xhtml"/>  
+            </p:tab>
+
+            <p:tab id="tab5" title="Fale Conosco">
+                <ui:include id="inc_fale_conosco" src="fale_conosco.xhtml"/>
+            </p:tab>
+
+            <p:tab id="tab6" title="Acompanhe sua OS">
+                <ui:include id="inc_os_internet" src="os_internet.xhtml"/>
+            </p:tab>
+
+        </p:tabView>
+
+        <br/>
+        <p:panel styleClass="back_footer" style="height: 135px; vertical-align: central">
+            <center>
+                <h:panelGrid columns="3">
+                    <h:column>
+                        <!--
+                        <p:graphicImage name="twitter.png" library="images"/>
+                        -->
+                    </h:column>
+                    <h:column>
+                        <center>
+
+                            <h:outputText  style="color: #ffffff; font-family: 'Black Ops One', cursive"
+                                           value=" © 2016  k2k Technology. Todos os direitos reservados" /><br/>
+                            <h:outputText style="color: #ffffff; font-family: 'Black Ops One', cursive;"
+                                          value="Avenida Ataíde Teive, 1864 - Liberdade, Boa Vista - RR, 69309-000"/><br/>
+                            <h:outputText style="color: #ffffff; font-family: 'Black Ops One', cursive"
+                                          value="(095)98115-3174/99168-6321"/><br/><br/>
+                            <h:panelGrid columns="2">
+                                <h:outputLink value="http://www.facebook.com/empresa" target="_blank" style="color: #fffff">
+                                    <p:graphicImage library="images" name="facebook.png" height="32"/>
+                                </h:outputLink>
+                                <h:outputText style="color: #ffffff; vertical-align: central; font-family: 'Revalia', sans-serif" value="Empresa no Facebook"/>
+                            </h:panelGrid>
+                        </center>                    
+
+                    </h:column>
+
+                </h:panelGrid>
+
+            </center>
+
+            <img src="http://counter1.statcounterfree.com/private/webcontadores.php?c=5f3afd77ea1e9f061eecea891990125e" border="0" align="right"/>
+
+        </p:panel>
+
+        <p:dialog id="dlg_fachada" widgetVar="fachada" modal="true" closable="true" 
+                  resizable="false" showEffect="drop" hideEffect="drop" style="s">
+            <p:graphicImage library="images" name="fachada.png"/>
+        </p:dialog>
+
+    </h:body>
+</html>
+

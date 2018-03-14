@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:outputLabel value="Nossos Serviços" style="color: #333333; font-weight: bold"/>
+
+    <h:form id="form_servicos" prependId="false">
+
+        <div class="horizontal_menu_servico" style="margin-top: 2em">
+            <center>
+
+                <p:commandButton id="cmdBtn_notebook" value="Reparo em Notebooks"  
+                                 action="#{viewBean.reparoNotebook()}" update=":tabView:pnlSDesktop :tabView:pnlSNotebook :tabView:pnlXerox"
+                                 style="color:#FFFFFF; font-family:Revalia, sans-serif"/>
+
+                <p:commandButton id="cmdBtn_desktop" value="Reparo em Desktops" action="#{viewBean.reparoDesktop}" update=":tabView:pnlSDesktop :tabView:pnlSNotebook :tabView:pnlXerox"
+                                 style="color:#FFFFFF; font-family:Revalia, sans-serif"/>
+
+                <p:commandButton id="cmdBtn_xerox" value="Xerox" action="#{viewBean.xerox()}" update=":tabView:pnlSDesktop :tabView:pnlSNotebook :tabView:pnlXerox"
+                                 style="color:#FFFFFF; font-family:Revalia, sans-serif"/>
+                <!--   </p:toolbarGroup> -->
+            </center>
+        </div>
+        <br/>
+
+    </h:form>
+
+    <p:panel id="pnlSDesktop" widgetVar="wgtvar_pnlSDesktop" style="background: top; border: hidden" 
+             visible="#{viewBean.exibePnlDesktop}"> 
+
+        <!-- coluna 1 -->
+        <center>
+            <h:panelGrid columns="6">
+                <h:column>
+
+                    <div style="height: 400px; white-space: normal; max-width: 350px">
+                        <p:graphicImage library="images/servicos" name="reparo_desktop.png" height="150" width="190" />
+                        <ul style="color: #CC3300; font-size: 20px; font-family: Revalia, sans-serif">     
+                            <li><h:outputText value="Montagem de computadores;" style="color: #333333; font-size: 11px"/></li>
+                            <li><h:outputText value="Formatação e instalação do sistema operacional;" style="color: #333333; font-size: 11px"/></li>
+                            <li><h:outputText value="Manutenção preventiva;" style="color: #333333; font-size: 11px"/></li>
+                            <li><h:outputText value="Remoção de vírus;" style="color: #333333; font-size: 11px"/></li>
+                            <li><h:outputText value="Configurações de internet e roteadores sem fio." style="color: #333333; font-size: 11px"/></li>
+                        </ul>
+                    </div>
+                </h:column>
+                <!-- coluna 2 -->
+
+                <h:column>
+
+                    <div style="border-left: 1px solid #e4e2e2; height: 400px; white-space: normal; max-width: 350px" >
+                        <p:graphicImage library="images/servicos" name="motherboard.png" height="150" width="190" style="padding-left: 60px"/>
+                        <ul style="color: #CC3300; font-size: 20px; font-family: Revalia, sans-serif">     
+                            <li><h:outputText value="Limpeza de placas sujas e oxidadas pela ação do tempo;" style="color: #333333; font-size: 11px"/></li>
+                            <li><h:outputText value="Recuperação de placas mãe e substituição de componentes eletrônicos defeituosos;" style="color: #333333; font-size: 11px"/></li>
+                            <li><h:outputText value="Troca de conectores quebrados (som, vídeo, rede, mouse, teclado, usb);" style="color: #333333; font-size: 11px"/></li>
+                            <li><h:outputText value="Atualizações de BIOS." style="color: #333333; font-size: 11px"/></li>
+                        </ul>
+                    </div>
+                </h:column>
+                <!-- coluna 3 -->
+
+                <h:column>
+                    <div style="border-left: 1px solid #cccccc; height: 400px; white-space: normal; max-width: 350px">
+                        <p:graphicImage library="images/servicos" name="power_source.png" height="150" width="190" style="padding-left: 60px"/>
+                        <ul style="color: #CC3300; font-size: 20px; font-family: Revalia, sans-serif">     
+                            <li><h:outputText value="Limpeza interna de fontes em geral, eliminando ruídos do cooler;" style="color: #333333; font-size: 11px"/></li>
+                            <li><h:outputText value="Reparo em fontes de potência real e nominal;" style="color: #333333; font-size: 11px"/></li>
+                            <li><h:outputText value="Substituição de fontes defeituosas e indicando a fonte correta para o equipamento." style="color: #333333; font-size: 11px"/></li>
+                        </ul>
+                    </div>
+                </h:column>
+                <!-- coluna 4 -->
+            </h:panelGrid>
+        </center>
+    </p:panel>
+
+    <p:panel id="pnlSNotebook" widgetVar="wgtvar_pnlSNotebook" style="background: top; border: hidden" visible="#{viewBean.exibePnlNotebook}">
+        <center>
+            <h:panelGrid columns="8">
+
+                <h:column>
+                    <div style="height: 450px; white-space: normal; max-width: 350px">
+                        <p:graphicImage library="images/servicos" name="notebook.png" height="150" width="190" style="padding-left: 60px"/>
+                        <ul style="color: #CC3300; font-size: 20px; font-family: Revalia, sans-serif">   
+                            <li><h:outputText value="Formatação e reinstalação de sistema operacional;" style="color: #333333; font-size: 11px"/></li>
+                            <li><h:outputText value="Remoção de vírus e spywares;" style="color: #333333; font-size: 11px"/></li>
+                            <li><h:outputText value="Backup de arquivos do HD;" style="color: #333333; font-size: 11px"/></li>
+                            <li><h:outputText value="Reparo e substituição de teclados e leitor de mídia;" style="color: #333333; font-size: 11px"/></li>
+                            <li><h:outputText value="Upgrades de memória e HD para melhor performance do equipamento;" style="color: #333333; font-size: 11px"/></li>
+                            <li><h:outputText value="Limpeza interna contra superaquecimento." style="color: #333333; font-size: 11px"/></li>
+                        </ul>
+                    </div>
+                </h:column>
+
+                <h:column>
+                    <div style="border-left: 1px solid #e4e2e2; height: 400px; white-space: normal; max-width: 350px">
+
+                        <p:graphicImage library="images/servicos" name="broken_notebook.png" height="150" width="190" style="padding-left: 60px"/>
+                        <ul style="color: #CC3300; font-size: 20px; font-family: Revalia, sans-serif">
+                            <li><h:outputText value="Substituição de telas LCD ou LED danificadas de todos os tamanhos e tipos;" style="color: #333333; font-size: 11px"/></li>
+                            <li><h:outputText value="Reparo ou substituição do flat cable da tela;" style="color: #333333; font-size: 11px"/></li>
+                            <li><h:outputText value="Recuperação ou substituição de dobradiças;" style="color: #333333; font-size: 11px"/></li>
+                            <li><h:outputText value="Reparo em carenagens da tela (trincada, fixação, quebrada, etc...);" style="color: #333333; font-size: 11px"/></li>
+                            <li><h:outputText value="Envelopamento personalizado da carenagem do notebook (consulte-nos)." style="color: #333333; font-size: 11px"/></li>
+                        </ul> 
+
+                    </div>
+                </h:column>
+
+                <h:column>
+                    <div style="border-left: 1px solid #cccccc; height: 400px; white-space: normal; max-width: 350px">
+                        <p:graphicImage library="images/servicos" name="motherboard_repair.png" height="150" width="190" style="padding-left: 50px"/>
+                        <ul style="color: #CC3300; font-size: 20px; font-family: Revalia, sans-serif">
+                            <li><h:outputText value="Reparo em placa mãe a nível eletrônico e substituição de componentes danificados;" style="color: #333333; font-size: 11px"/></li>
+                            <li><h:outputText value="Reparo de conectores quebrados (energia, usb, vídeo, sd-card, etc...);" style="color: #333333; font-size: 11px"/></li>
+                            <li><h:outputText value="Reparo em fonte interna DC-DC;" style="color: #333333; font-size: 11px"/></li>
+                            <li><h:outputText value="Reparo em chipset BGA de vídeo;" style="color: #333333; font-size: 11px"/></li>
+                            <li><h:outputText value="Reparo no circuito da bateria;" style="color: #333333; font-size: 11px"/></li>
+                            <li><h:outputText value="Atualização de BIOS." style="color: #333333; font-size: 11px"/></li>
+                        </ul> 
+                    </div>
+                </h:column>
+
+                <h:column>
+                    <div style="border-left: 1px solid #cccccc; height: 400px; white-space: normal; max-width: 350px">
+
+                        <p:graphicImage library="images/servicos" name="charger.png" height="150" width="190" style="padding-left: 60px"/>
+                        <ul style="color: #CC3300; font-size: 20px; font-family: Revalia, sans-serif">
+                            <li><h:outputText value="Reparo de fontes danificadas a nível eletrônico, envolvendo substituição de componentes e sua fonte fica como nova." style="color: #333333; font-size: 11px"/></li>
+                            <li><h:outputText value="Substituição ou reparo de cabo danificado" style="color: #333333; font-size: 11px"/></li>
+                        </ul>
+
+                    </div>
+                </h:column>
+
+            </h:panelGrid>
+        </center>
+    </p:panel>
+
+    <p:panel id="pnlXerox" widgetVar="wgtvar_pnlXerox" style="background: top; border: hidden" visible="#{viewBean.exibePnlXerox}">
+        <center>
+            <h:panelGrid columns="2">
+
+                <h:column>
+                    <p:graphicImage library="images" name="xerox.png"/>
+                </h:column>
+                <h:column>
+                    <ul style="color: #CC3300; font-size: 20px; font-family: Revalia, sans-serif">
+                        <li><h:outputText value="Realização de Cópias;" style="color: #333333; font-size: 11px"/></li>
+                        <li><h:outputText value="Encadernação;" style="color: #333333; font-size: 11px"/></li>
+                        <li><h:outputText value="Plastificação;" style="color: #333333; font-size: 11px"/></li>
+                        <li><h:outputText value="Digitalização;" style="color: #333333; font-size: 11px"/></li>
+                        <li><h:outputText value="Impressão;" style="color: #333333; font-size: 11px"/></li>
+                        <li><h:outputText value="Atendimento a contratos de Instituições de Ensino e Empresas em Geral." style="color: #333333; font-size: 11px"/></li>
+                    </ul>
+                </h:column>
+            </h:panelGrid>
+        </center>
+    </p:panel>
+
+
+</html>
+

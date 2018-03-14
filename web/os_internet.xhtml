@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <p:fieldset legend="Ordem de Serviço pela Internet" style="color: #ffffff" styleClass="back">  
+
+        <center>
+            <form id="form1" name="form1" method="post" action="http://www.shoficina.com.br/os/show_os.php">
+                <h:panelGrid columns="2">
+                <h:outputLabel value="Chave de Acesso: "/>
+                <input type="text" name="WebKey" id="WebKey" size="14" maxlength="10" style="border-radius: 4px 4px 4px 4px; width: 170px; text-transform: uppercase"/> 
+                <h:outputLabel value="Senha: "/>
+                <input type="password" name="PassKey" id="PassKey" size="15" maxlength="6" style="border-radius: 4px 4px 4px 4px; width: 170px"/> 
+                </h:panelGrid>
+                <br/>
+                <input type="submit" name="dfg" id="dfg" value="Consultar" class="back" 
+                       style="color: #ffffff; border-radius: 4px 4px 4px 4px; height: 30px; border: 1px solid #999999; font-family:Revalia, sans-serif;"/>
+            </form> 
+        </center>
+
+    </p:fieldset>   
+
+</html>
+
