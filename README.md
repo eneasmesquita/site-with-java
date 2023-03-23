@@ -1,5 +1,13 @@
-# site_with_java
-site with java controller and hosted in Tomcat
+# A website with back-end Java
 
 
-Small project of a website with java in the background to meet the demand for virtual positioning of a small assistance of computers and laptops shop who I was the founder.
+
+A small project of a website with back-end Java to meet the demand for virtual positioning of a small assistance of computers and laptops shop for which I was the founder.
+
+**Technologies**
+
+* Java
+* PrimeFaces
+* CSS
+* JavaScript
+* Tomcat
